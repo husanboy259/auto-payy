@@ -8,7 +8,7 @@ from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
 
 import database as db
-from config import ADMIN_IDS, PAYMENT_AMOUNT, MINI_APP_URL, BANK_NAME, CARD_NUMBER
+from config import ADMIN_IDS, BANK_NAME, CARD_NUMBER
 
 router = Router()
 
