@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Auto To'lov</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="header-inner">
+        <div class="avatar" id="userAvatar">А</div>
+        <div class="header-info">
+          <h2 id="userName">Yuklanmoqda...</h2>
+          <p id="userId" class="user-id">ID: —</p>
+        </div>
+        <div class="status-badge" id="statusBadge">Faol</div>
+      </div>
+    </header>
+
+    <!-- Balance Card -->
+    <section class="balance-section">
+      <div class="balance-card">
+        <div class="balance-card-bg"></div>
+        <div class="balance-label">Joriy balans</div>
+        <div class="balance-amount" id="balanceAmount">0 so'm</div>
+        <div class="balance-footer">
+          <span class="balance-icon">💳</span>
+          <span>Auto To'lov Tizimi</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Payment Section -->
+    <section class="payment-section" id="paymentSection">
+      <div class="section-title">To'lov</div>
+
+      <div class="card-info-block">
+        <div class="card-info-header">
+          <span class="bank-logo">🏦</span>
+          <span id="bankName">Uzcard</span>
+        </div>
+        <div class="card-number-display" id="cardNumber">8600 •••• •••• ••••</div>
+        <div class="card-meta">
+          <div>
+            <div class="card-meta-label">Karta egasi</div>
+            <div class="card-meta-value" id="cardHolder">— — —</div>
+          </div>
+          <div>
+            <div class="card-meta-label">Miqdor</div>
+            <div class="card-meta-value" id="payAmount">50,000 so'm</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timer -->
+      <div class="timer-block" id="timerBlock" style="display:none;">
+        <div class="timer-label">⏱ Qolgan vaqt</div>
+        <div class="timer-display" id="timerDisplay">05:00</div>
+        <div class="timer-bar-wrap">
+          <div class="timer-bar" id="timerBar"></div>
+        </div>
+      </div>
+
+      <!-- Copy Button -->
+      <button class="btn btn-secondary" id="copyBtn" onclick="copyCard()">
+        <span>📋</span> Karta raqamini nusxalash
+      </button>
+
+      <!-- Pay Button -->
+      <button class="btn btn-primary" id="payBtn" onclick="startPayment()">
+        <span>💳</span> To'lovni boshlash
+      </button>
+
+      <!-- Confirm Button (hidden initially) -->
+      <button class="btn btn-success" id="confirmBtn" style="display:none;" onclick="confirmPayment()">
+        <span>✅</span> To'lovni tasdiqlash
+      </button>
+    </section>
+
+    <!-- History Section -->
+    <section class="history-section">
+      <div class="section-title">So'nggi faollik</div>
+      <div class="history-list" id="historyList">
+        <div class="history-empty">
+          <div class="history-empty-icon">📭</div>
+          <div>Hozircha faollik yo'q</div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
