@@ -1,0 +1,25 @@
+services:
+  - type: worker
+    name: auto-pay-bot
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: ADMIN_IDS
+        sync: false
+      - key: CARD_NUMBER
+        sync: false
+      - key: CARD_HOLDER
+        sync: false
+      - key: BANK_NAME
+        sync: false
+      - key: PAYMENT_AMOUNT
+        sync: false
+      - key: PAYMENT_TIMEOUT
+        sync: false
+      - key: MINI_APP_URL
+        sync: false
+      - key: DATABASE_URL
+        sync: false
