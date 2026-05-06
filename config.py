@@ -17,8 +17,5 @@ BANK_NAME = os.getenv("BANK_NAME", "Uzcard")
 PAYMENT_AMOUNT = int(os.getenv("PAYMENT_AMOUNT", "50000"))  # UZS
 PAYMENT_TIMEOUT = int(os.getenv("PAYMENT_TIMEOUT", "300"))  # 5 minutes in seconds
 
-# Mini App URL (after deploying webapp)
-MINI_APP_URL = os.getenv("MINI_APP_URL", "https://your-domain.com")
-
 # Supabase PostgreSQL
 DATABASE_URL = os.getenv("DATABASE_URL", "")

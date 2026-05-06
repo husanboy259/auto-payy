@@ -3,14 +3,14 @@ from datetime import datetime, timedelta
 from aiogram import Router, F, Bot
 from aiogram.types import (
     Message, CallbackQuery, InlineKeyboardMarkup,
-    InlineKeyboardButton, WebAppInfo
+    InlineKeyboardButton
 )
 from aiogram.filters import CommandStart
 
 import database as db
 from config import (
     CARD_NUMBER, CARD_HOLDER, BANK_NAME,
-    PAYMENT_AMOUNT, PAYMENT_TIMEOUT, ADMIN_IDS, MINI_APP_URL
+    PAYMENT_AMOUNT, PAYMENT_TIMEOUT, ADMIN_IDS
 )
 
 router = Router()
@@ -23,7 +23,6 @@ def main_menu_kb() -> InlineKeyboardMarkup:
     return InlineKeyboardMarkup(inline_keyboard=[
         [InlineKeyboardButton(text="💳 To'lov qilish", callback_data="start_payment")],
         [InlineKeyboardButton(text="💰 Balansim",      callback_data="my_balance")],
-        [InlineKeyboardButton(text="📱 Mini App",      web_app=WebAppInfo(url=MINI_APP_URL))],
     ])
 
 
